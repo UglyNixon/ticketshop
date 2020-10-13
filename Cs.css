@@ -1,0 +1,142 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-weight: normal;
+  box-sizing: border-box;
+  font-size: 16px;
+  line-height: 1.3;
+  -webkit-font-smoothing: antialiased;
+}
+body * {
+  box-sizing: inherit;
+}
+p {
+  margin: 0;
+  padding: 0;
+}
+.cont {
+  display: flex;
+  height: 100%;
+  min-height: 100vh;
+  flex-direction: column;
+  -webkit-box-pack: start;
+  justify-content: flex-start;
+  background-color: rgb(255, 255, 255);
+}
+
+html {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+.fl-Dv {
+  display: flex;
+  flex-direction: row;
+  width: 960px;
+  margin: 0px auto;
+  height: 30px;
+  -webkit-box-pack: justify;
+  justify-content: space-around;
+  -webkit-box-align: center;
+  align-items: center;
+  position: relative;
+}
+.fl-Dv.search {
+  justify-content: center;
+  padding: 25px 0px;
+}
+
+.header-imp {
+  margin: 0px 2px;
+  height: 35px;
+}
+.txt {
+  width: 250px;
+  padding-left: 6px;
+}
+.button.header-imp {
+  width: 75px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  margin: 0 2px;
+}
+
+a:hover,
+.place-find:hover {
+  color: #497ddd;
+  border-bottom: 1px dashed;
+  cursor: pointer;
+}
+.catalog-nav {
+  background-color: rgb(245, 245, 245);
+  height: 61px;
+  justify-content: center;
+  border-top: 1px solid rgb(233, 233, 233);
+  border-bottom: 1px solid rgb(233, 233, 233);
+}
+.event-type {
+  display: table;
+  padding: 0;
+  margin: 0 2px;
+  width: 146px;
+  height: 48px;
+  border: 1px solid rgb(214, 209, 209);
+  border-radius: 6px;
+  align-items: center;
+}
+.event-type p {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+.event-type:hover {
+  color: rgb(95, 156, 14);
+  background-color: rgb(214, 209, 209);
+  cursor: pointer;
+}
+.logo {
+  margin-top: 8px;
+  width: auto;
+  height: 80px;
+}
+.filter-box {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.filter-form {
+  margin: 10px 0px 0px 10px;
+}
+.main-cont {
+  display: none;
+}
+.main-cont.show {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 960px;
+  padding: 20px 15px;
+  margin: 0px auto;
+  justify-content: flex-start;
+}
+.main-cont-card {
+  margin: 20px 0;
+  border: 1px solid rgb(214, 209, 209);
+  border-radius: 5px;
+  width: 750px;
+
+  margin-left: 25px;
+}
+input[type="checkbox"] {
+  margin: 6px 0px;
+  transform: scale(1.5);
+}
+label {
+  font-size: 1.2em;
+  padding-left: 5px;
+}
