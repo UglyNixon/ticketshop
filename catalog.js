@@ -4,7 +4,7 @@ function randomNum(min,max){
     let rand = min - 0.5 + Math.random() * (max - min + 1);
     return Math.round(rand);
 }
-function createTeaters(teatr){
+function createTeaters(teatr,name){
  teatr.forEach(element => {
      let j=randomNum(1,3);  
     for(let i=0;i<j;i++){
@@ -20,52 +20,123 @@ function createTeaters(teatr){
         }
     }
      })
-     localStorage.setItem(teatr,JSON.stringify(teatr))
+     localStorage.setItem(name,JSON.stringify(teatr))
  }
+
+ function randomDate(){
+    let date = new Date();
+    date.setDate(date.getDate() + randomNum(5,120));
+    let d= date.getDate();
+    let m = date.getMonth()+1;
+    if (d<10) {d=`0${d}`}
+    if (m<10) {m=`0${m}`}
+   return`${d}-${m}-${date.getFullYear()}`
+}
+
+function filterHall (type,nazv){
+  let arr = type.filter(elem=>elem.place==nazv)
+//   console.group()
+//   console.log(type)
+//   console.log(nazv)
+//   console.log(arr)
+//   console.log( arr[0].hall[randomNum(0,arr[0].hall.length-1)])
+//   console.groupEnd()
+
+  return  arr[0].hall[randomNum(0,arr[0].hall.length-1)]
+
+}
  /*                 
  ********************************               
   */
- let teaters = [
-    {place: "mhat",
-    hall:[]
-    },
-    {place: "estradi",hall:[]},
-    {place: 'taganka',hall:[]},
-]
-let movies =[
-    {place: "karo",
-    hall:[]
-    },
-    {place: "3Dmax",hall:[]},
-    
-]
-let concerts = [
-    {place: "kremlin",
-    hall:[]
-    },
-    {place: "bar",hall:[]},
- ]
-
-if (localStorage.getItem('teaters')==null) {
-createTeaters(teaters)
-}
-else {   
-teaters = JSON.parse(localStorage.getItem('teaters'))
-}
-if (localStorage.getItem('movies')==null) {
-createTeaters(movies)
-}
-else {   
-teaters = JSON.parse(localStorage.getItem('movies'))
-}
-if (localStorage.getItem('concerts')==null) {
-createTeaters(concerts)
-}
-else {   
-teaters = JSON.parse(localStorage.getItem('concerts'))
-}
 
 
 
+
+
+ /*
+ ************************
+ */
+
+ 
+
+ 
+ function createEvents (type,number){
+     for (let i=0;i<number;i++){
+         let nazv =TeatrsNames[randomNum(0,TeatrsNames.length-1)]
+         teatrEvents[i]={
+             name : teatEventsNames[randomNum(0,teatEventsNames.length-1)],
+             place : nazv,
+             date :randomDate(),
+             hall: filterHall(type,nazv),
+            
+        
+             buyTicket: function ()  {
+                        console.log(this.name)
+                    },
+            showTicket : function () {
+                        console.log(this.place)
+                    }
+                    }
+
+         }
+     }
+    let teatrEvents=[];
+    let TeatrsNames = ['МХАТ','Театр Эстрады','Театр на Таганке'];
+    let teatEventsNames=['король лир','Щелкунчик','Кабала святош','Три сестры','Чайка','Мыши,Кай и зелененький']
+    let teaters = [
+       {place: "МХАТ",   hall:[] ,imgSrc :''},
+       {place: "Театр Эстрады",hall:[],imgSrc :''},
+       {place: 'Театр на Таганке',hall:[],imgSrc :''},
+   ]
+   let movies =[
+       {place: "КАРО",
+       hall:[],
+       imgSrc :''
+       },
+       {place: "3Dmax",hall:[],imgSrc :''},
+       
+   ]
+   let concerts = [
+       {place: "Крокус Сити Холл",
+       hall:[],imgSrc :''
+       },
+       {place: "Китайский телчик Джао да",hall:[],imgSrc :''},
+    ]
+    if (localStorage.getItem('teaters')==null) {
+        createTeaters(teaters,"teaters")
+        }
+        else {   
+        teaters = JSON.parse(localStorage.getItem('teaters'))
+        }
+        if (localStorage.getItem('movies')==null) {
+        createTeaters(movies,"movies")
+        }
+        else {   
+        movies = JSON.parse(localStorage.getItem('movies'))
+        }
+        if (localStorage.getItem('concerts')==null) {
+        createTeaters(concerts,"concerts")
+        }
+        else {   
+        concerts = JSON.parse(localStorage.getItem('concerts'))
+        }
+ createEvents(teaters,20)
+
+
+
+/*
+тип события 
+Название события;+
+Дата проведения;+
+Место проведения;+
+Зал;
+Ряды;
+Места;
+Id;
+Цена;
+Статус (продан/свободен);
+Метод: Купить билет (ряд, место);
+Метод: Показать билет
+*/
 
 
