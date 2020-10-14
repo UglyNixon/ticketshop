@@ -104,10 +104,10 @@ a:hover,
   height: 80px;
 }
 .filter-box {
-  justify-content: center;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
+  margin-top: 20px;
 }
 .filter-form {
   margin: 10px 0px 0px 10px;
@@ -118,25 +118,39 @@ a:hover,
 .main-cont.show {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   width: 960px;
   padding: 20px 15px;
   margin: 0px auto;
-  justify-content: flex-start;
 }
-.main-cont-card {
+.main-info {
   margin: 20px 0;
   border: 1px solid rgb(214, 209, 209);
   border-radius: 5px;
   width: 750px;
-
   margin-left: 25px;
+  display: flex;
+  flex-direction: column;
 }
-input[type="checkbox"] {
-  margin: 6px 0px;
-  transform: scale(1.5);
+.main-card {
+  margin: 10px 10px 10px 10px;
+  border: 1px solid rgb(214, 209, 209);
+  padding: 5px 200px 5px 8px;
+  display: flex;
+  flex-direction: row;
 }
-label {
-  font-size: 1.2em;
-  padding-left: 5px;
+.card-item-info {
+  width: 100%;
+  border: 1px solid rgb(214, 209, 209);
+  display: flex;
+  flex-direction: row;
+}
+
+.item-img {
+  width: 90px;
+  height: 110px;
+  border: 1px solid rgb(214, 209, 209);
+}
+.item-info {
+  margin-left: 5px;
 }
