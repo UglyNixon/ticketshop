@@ -7,7 +7,7 @@
     <title>Document</title>
   </head>
   <body>
-    <script src="catalog.js"></script>
+    <script src="loadcatalog.js"></script>
     <div class="cont">
     <header>
       <div class="fl-Dv "><div class='place-find'>Место расположения</div>
@@ -23,53 +23,41 @@
 
       </div>
       <div class="fl-Dv catalog-nav">
-        <div class="event-type"><p>Театры</p></div>
-        <div class="event-type"><P>Кино</p></div>
-        <div class="event-type"><P>Концерты</p></div>
+        <div class="event-type" data-type="filter" data-search="teatr"><p>Театры</p></div>
+        <div class="event-type" data-type="filter" data-search="movie"><P>Кино</p></div>
+        <div class="event-type" data-type="filter" data-search="concert"><P>Концерты</p></div>
       </div>
     </header>
     <main>
       <div class="main-cont show">
-        <div class="filter-box"> 
+        <div class="filter-box" id="formBox"> 
           <p>Фильтры для поиска:</p>
-          <form class="filter-form">
-            <Input type="checkbox" name='inp1'></Input>
-            <label for="inp1">name1</label></br>
-            <Input type="checkbox" name='inp2'></Input>
-            <label for="inp2">name2</label></br>
-            <Input type="checkbox" name='inp3'></Input>
-            <label for="inp3">name3</label></br>
-            <Input type="checkbox" name='inp4'></Input>
-            <label for="inp4">name4</label></br>
-          </form>
-        </div>
-        <div class="main-info">
           
+        </div>
+        <div  id='mainField'>
+<!--           
           <div class="main-card">
             <div class="card-item-info">
               <div class="item-img"></div>
-              <div class="item-info"></div>
+              <div class="item-info">
+                <div class="event-name event-info">Название:</div>
+                <div class="event-place event-info">Место проведения:</div>
+                <div class="event-date event-info">Дата:</div>
+                <div class="event-hall event-info">Залл:</div>
+              </div>
             </div>
-            <div class="card-item-form"></div>
-          </div>
-          <div class="main-card">
-            <div class="card-item-info">
-              <div class="item-img"></div>
-              <div class="item-info"></div>
+            <div class="card-item-form">
+              <button class="item-buy-button">Купить</button>
             </div>
-            <div class="card-item-form"></div>
-          </div><div class="main-card">
-            <div class="card-item-info">
-              <div class="item-img"></div>
-              <div class="item-info"></div>
-            </div>
-            <div class="card-item-form"></div>
-          </div>
+          </div> -->
+        
         
 
         </div>
     </main>
     <footer></footer>
   </div>
+
+ 
    </body>
 </html>

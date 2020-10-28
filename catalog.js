@@ -95,6 +95,7 @@ function createTeatEvents (type,number){
                    }
 
         }
+  
     }
 function createMoviEvents (type,number){
    
@@ -125,7 +126,7 @@ function createConcEvents (type,number){
         let nazv =ConcertNames[randomNum(0,ConcertNames.length-1)]
         concertEvents[i]={
             type:'concert',
-            name : concEventsNames[randomNum(0,teatEventsNames.length-1)],
+            name : concEventsNames[randomNum(0,concEventsNames.length-1)],
             place : nazv,
             date :randomDate(),
             hall: filterHall(type,nazv),
@@ -140,6 +141,7 @@ function createConcEvents (type,number){
                    }
 
         }
+        
     }
  /*                 
  ********************************               
@@ -157,6 +159,7 @@ function createConcEvents (type,number){
     let teatrEvents=[];
     let movieEvents=[];
     let concertEvents=[];
+    
     let TeatrsNames = ['МХАТ','Театр Эстрады','Театр на Таганке'];
     let teatEventsNames=['король лир','Щелкунчик','Кабала святош','Три сестры','Чайка','Мыши,Кай и зелененький']
     let MoviesNames = ['КАРО','3Dmax'];
@@ -200,9 +203,16 @@ function createConcEvents (type,number){
         else {   
         concerts = JSON.parse(localStorage.getItem('concerts'))
         }
+      
+      
+      
+         
  createTeatEvents(teaters,randomNum(5,20))
  createMoviEvents(movies,randomNum(10,30))
  createConcEvents(concerts,randomNum(7,25))
+let EventsArr = [...teatrEvents,...movieEvents,...concertEvents]
+
+
 /*
 тип события +
 Название события;+
